@@ -845,4 +845,10 @@ button {
 	text-align: center;
     border-radius: 5px;
     margin: 5px 0;
+	transition: linear 0.2s;
+}
+
+#submit:hover{
+	background-color: #95a0a4;
+	transition: linear 0.2s;
 }
