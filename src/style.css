@@ -25,7 +25,7 @@ button {
 	background-color: transparent;
 	cursor: pointer;
 }
-#select{
+#select, #submit{
 	font-size: 12px;
 	font-family: "PT Mono", monospace;
 	
@@ -102,7 +102,7 @@ button {
 	margin-top: -5px;
 }
 .container {
-	max-width: 740px;
+	max-width: 760px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -205,7 +205,7 @@ button {
 	display: flex;
 }
 .keyboard .line div {
-	width: 49px;
+	width: 51px;
 	height: 49px;
 	line-height: 42px;
 	font-size: 15px;
@@ -825,4 +825,24 @@ button {
 
 .pressed {
 	background-color: #c7d0d4 !important;
+}
+
+/*блок із текстом*/
+
+#text{
+	resize:none;
+}
+
+.text-hide{
+	display: none;
+}
+
+#submit{
+	font-size: 14px;
+	width: 120px;
+	height:50px;
+	border: 1px solid #c7d0d4;
+	text-align: center;
+    border-radius: 5px;
+    margin: 5px 0;
 }

@@ -25,8 +25,24 @@
 				<select title="Вибір мови/Language selection" id="select">
 					<option value="0" selected="true" disabled="disabled">Виберіть мову</option>
 					<option value="Українська">Українська</option>
+					<option value="1_у">1 рівень</option>
+					<option value="2_у">2 рівень</option>
+					<option value="3_у">3 рівень</option>
+					<option value="4_у">4 рівень</option>
+					<option value="-" disabled>----------------</option>
 					<option value="English">English</option>
+					<option value="1_e">1 рівень</option>
+					<option value="2_e">2 рівень</option>
+					<option value="3_e">3 рівень</option>
+					<option value="4_e">4 рівень</option>
+					<option value="-" disabled>----------------</option>
 					<option value="Русский">Русский</option>
+					<option value="1_р">1 рівень</option>
+					<option value="2_р">2 рівень</option>
+					<option value="3_р">3 рівень</option>
+					<option value="4_р">4 рівень</option>
+					<option value="-" disabled>----------------</option>
+					<option id="optionText" value="text">Вставити текст</option>
 				</select>
 				<button value="Refresh Page" onClick="window.location.reload();" title="Refresh Page">
 					<img src="img/Refresh.svg" alt="Refresh Page" width="19px" height="19px">
@@ -65,7 +81,7 @@
 		</div>
 		<!-- // Logo and Results -->
 
-		<div class="container keyboard">
+		<div class="container keyboard key-hide">
 			<!-- Input field -->
 			<form action="">
 				<input
@@ -176,6 +192,17 @@
 				</div>
 			</div>
 			<!-- // Keyboard -->
+
+			
+		</div>
+		<div class="container texterea text-hide">
+			<div>
+				<textarea name="text" id="text" cols="100" rows="10"  placeholder="Введіть текст"></textarea>
+
+				<button type = "button" id="submit" name = "button">
+					Продовжити
+				</button>
+			</div>
 		</div>
 
 		<script src="src/script.js"></script>
