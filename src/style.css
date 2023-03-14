@@ -10,11 +10,32 @@ body {
 	padding: 0;
 	font-family: sans-serif;
 }
+
 .navigation{
 	margin-bottom: 15px;
 	display: flex;
-    align-items: start;
+	justify-content: space-between;
+	align-items: center;
 }
+.block-select{
+	display: flex;
+}
+.block-theme{
+	font-family: "PT Mono", monospace;
+	font-size: 13px;
+}
+.theme{
+	height: 20px;
+	border-bottom: black solid 2px;
+}
+.theme:hover{
+	cursor: pointer;
+	border-bottom: none;
+}
+.light-t{
+	display: none;
+}
+
 button {
 	height: 29px;
 	margin-left: 10px;
@@ -26,13 +47,19 @@ button {
 	cursor: pointer;
 }
 #select, #submit{
-	font-size: 12px;
+	font-size: 13px;
 	font-family: "PT Mono", monospace;
 	
 	height: 21px;
 	border: none;
-	border-bottom: groove;
+	border-bottom: groove 3px;
 }
+
+option{
+	font-size: 13px;
+	color: rgb(1, 0, 0);
+}
+
 .lineColor{
 	color: red;
 }
@@ -147,7 +174,7 @@ button {
 .indicator {
 	display: -webkit-box;
 	display: flex;
-	font-size: 12px;
+	font-size: 13px;
 	font-family: "PT Mono", monospace;
 	/* border-right: 1px solid #d9d9d9; */
 	padding: 10px;

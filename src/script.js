@@ -150,6 +150,42 @@ const textShow = document.querySelector(".texterea");
 const texterea = document.querySelector("#text");
 const button = document.querySelector("#submit");
 const el = document.querySelector("#optionText");
+const darckT = document.querySelector(".darck-t");
+const lightT = document.querySelector(".light-t");
+const clr = document.querySelectorAll(".clr");
+
+
+// Стилі для сітлої/темної теми сайту
+document.querySelector('.darck-t').onclick = function() {
+	darckT.style='display:none;';
+	lightT.style='display:block; border-bottom-color:#8899a6;';
+	document.body.style='background:#141d26';
+	clr.forEach(element => {
+		element.style.color='#8899a6';
+	});
+	select.style='color: #8899a6; background: content-box; border-color: #8899a6;';
+	input.style='background: #1b2836; color:#8899a6';
+	texterea.style='background: #1b2836; color:#8899a6';
+	button.style='color:white';
+
+	document.querySelector('#textExample').style='color:#8899a6';
+
+}
+document.querySelector('.light-t').onclick = function() {
+	darckT.style='display:block; border-bottom-color:#000;';
+	lightT.style='display:none';
+	document.body.style='background:none';
+	clr.forEach(element => {
+		element.style.color='black';
+	});
+	document.querySelector('.results-title').style='color:#5c8dcb';
+	select.style='color: black; border-color: groove;';
+	input.style='background: none; color:#000';
+	texterea.style='background: none; color:#000';
+	button.style='color:black';
+
+	document.querySelector('#textExample').style='color:#000';
+}
 
 
 // Перевірка на вибрану мову
@@ -350,7 +386,7 @@ function createParty(text) {
 		text,
 		strings: [],
 		maxStringLength: 70,
-		maxShowStrings: 3,
+		maxShowStrings: 1,
 		currentStringIndex: 0,
 		currentPressedIndex: 0,
 		errors: [],
