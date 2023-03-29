@@ -66,6 +66,7 @@ option{
 .hide{
 	display: none;
 }
+
 .show{
 	display: none;
 }
@@ -146,12 +147,22 @@ option{
 }
 .results-title {
 	display: -webkit-box;
-	display: flex;
+	display: none;
 	font-family: "PT Mono", monospace;
 	margin-bottom: 15px;
 	font-weight: 600;
 	color: #5c8dcb;
 }
+.r_s_t-1, .r_s_t-2, .r_s_t-3{
+	display: none;
+}
+/* .blockShow{
+	display: block;
+}
+.blockHide{
+	display: none;
+} */
+
 .logo {
 	display: inline-block;
 	margin: 0 auto;

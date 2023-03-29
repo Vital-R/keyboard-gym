@@ -153,7 +153,14 @@ const el = document.querySelector("#optionText");
 const darckT = document.querySelector(".darck-t");
 const lightT = document.querySelector(".light-t");
 const clr = document.querySelectorAll(".clr");
+const resultsTitle = document.querySelectorAll(".results-title");
+const r_s_t_1 = document.querySelectorAll(".r_s_t-1");
+const r_s_t_2 = document.querySelectorAll(".r_s_t-2");
+const r_s_t_3 = document.querySelectorAll(".r_s_t-3");
 
+r_s_t_1.forEach(element => {
+	element.style='display:block;';
+});
 
 // Стилі для сітлої/темної теми сайту
 document.querySelector('.darck-t').onclick = function() {
@@ -178,7 +185,6 @@ document.querySelector('.light-t').onclick = function() {
 	clr.forEach(element => {
 		element.style.color='black';
 	});
-	document.querySelector('.results-title').style='color:#5c8dcb';
 	select.style='color: black; border-color: groove;';
 	input.style='background: none; color:#000';
 	texterea.style='background: none; color:#000';
@@ -195,58 +201,106 @@ select.addEventListener("change", function() {
 		keyHide.style.display = "block";
 		textShow.classList.add("text-hide");
 	}
+	function displayResultUA() {
+		r_s_t_1.forEach(element => {
+			element.style='display:block;';
+		});
+		r_s_t_2.forEach(element => {
+			element.style='display:none;';
+		});
+		r_s_t_3.forEach(element => {
+			element.style='display:none;';
+		});
+	}
+	function displayResultEN() {
+		r_s_t_1.forEach(element => {
+			element.style='display:none;';
+		});
+		r_s_t_2.forEach(element => {
+			element.style='display:block;';
+		});
+		r_s_t_3.forEach(element => {
+			element.style='display:none;';
+		});
+	}
+	function displayResultRU() {
+		r_s_t_1.forEach(element => {
+			element.style='display:none;';
+		});
+		r_s_t_2.forEach(element => {
+			element.style='display:none;';
+		});
+		r_s_t_3.forEach(element => {
+			element.style='display:block;';
+		});
+	}
 
 	let party = createParty('');
 	const element = document.querySelector('#select');
 	if (element.value === "English") {
 		party = createParty(textEn);
 		textHide();
+		displayResultEN();
 	} if (element.value === "1_e") {
 		party = createParty(textEn_1);
 		textHide();
+		displayResultEN();
 	} if (element.value === "2_e") {
 		party = createParty(textEn_2);
 		textHide();
+		displayResultEN();
 	} if (element.value === "3_e") {
 		party = createParty(textEn_3);
 		textHide();
+		displayResultEN();
 	} if (element.value === "4_e") {
 		party = createParty(textEn_4);
 		textHide();
+		displayResultEN();
 	}
 
 	if (element.value === "Русский") {
 		party = createParty(textRus);
 		textHide();
+		displayResultRU();
 	} if (element.value === "1_р") {
 		party = createParty(textRus_1);
 		textHide();
+		displayResultRU();
 	} if (element.value === "2_р") {
 		party = createParty(textRus_2);
 		textHide();
+		displayResultRU();
 	} if (element.value === "3_р") {
 		party = createParty(textRus_3);
 		textHide();
+		displayResultRU();
 	} if (element.value === "4_р") {
 		party = createParty(textRus_4);
 		textHide();
+		displayResultRU();
 	}
 
 	if (element.value === "Українська"){
 		party = createParty(textUa);
 		textHide();
+		displayResultUA();
 	} if (element.value === "1_у"){
 		party = createParty(textUa_1);
 		textHide();
+		displayResultUA();
 	} if (element.value === "2_у"){
 		party = createParty(textUa_2);
 		textHide();
+		displayResultUA();
 	} if (element.value === "3_у"){
 		party = createParty(textUa_3);
 		textHide();
+		displayResultUA();
 	} if (element.value === "4_у"){
 		party = createParty(textUa_4);
 		textHide();
+		displayResultUA();
 	}
 
 	
