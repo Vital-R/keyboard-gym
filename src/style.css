@@ -10,11 +10,32 @@ body {
 	padding: 0;
 	font-family: sans-serif;
 }
+
 .navigation{
 	margin-bottom: 15px;
 	display: flex;
-    align-items: start;
+	justify-content: space-between;
+	align-items: center;
 }
+.block-select{
+	display: flex;
+}
+.block-theme{
+	font-family: "PT Mono", monospace;
+	font-size: 13px;
+}
+.theme{
+	height: 20px;
+	border-bottom: black solid 2px;
+}
+.theme:hover{
+	cursor: pointer;
+	border-bottom: none;
+}
+.light-t{
+	display: none;
+}
+
 button {
 	height: 29px;
 	margin-left: 10px;
@@ -25,20 +46,27 @@ button {
 	background-color: transparent;
 	cursor: pointer;
 }
-#select{
-	font-size: 12px;
+#select, #submit{
+	font-size: 13px;
 	font-family: "PT Mono", monospace;
 	
 	height: 21px;
 	border: none;
-	border-bottom: groove;
+	border-bottom: groove 3px;
 }
+
+option{
+	font-size: 13px;
+	color: rgb(1, 0, 0);
+}
+
 .lineColor{
 	color: red;
 }
 .hide{
 	display: none;
 }
+
 .show{
 	display: none;
 }
@@ -102,7 +130,7 @@ button {
 	margin-top: -5px;
 }
 .container {
-	max-width: 740px;
+	max-width: 760px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -119,12 +147,22 @@ button {
 }
 .results-title {
 	display: -webkit-box;
-	display: flex;
+	display: none;
 	font-family: "PT Mono", monospace;
 	margin-bottom: 15px;
 	font-weight: 600;
 	color: #5c8dcb;
 }
+.r_s_t-1, .r_s_t-2, .r_s_t-3{
+	display: none;
+}
+/* .blockShow{
+	display: block;
+}
+.blockHide{
+	display: none;
+} */
+
 .logo {
 	display: inline-block;
 	margin: 0 auto;
@@ -147,7 +185,7 @@ button {
 .indicator {
 	display: -webkit-box;
 	display: flex;
-	font-size: 12px;
+	font-size: 13px;
 	font-family: "PT Mono", monospace;
 	/* border-right: 1px solid #d9d9d9; */
 	padding: 10px;
@@ -205,7 +243,7 @@ button {
 	display: flex;
 }
 .keyboard .line div {
-	width: 49px;
+	width: 51px;
 	height: 49px;
 	line-height: 42px;
 	font-size: 15px;
@@ -825,4 +863,30 @@ button {
 
 .pressed {
 	background-color: #c7d0d4 !important;
+}
+
+/*блок із текстом*/
+
+#text{
+	resize:none;
+}
+
+.text-hide{
+	display: none;
+}
+
+#submit{
+	font-size: 14px;
+	width: 120px;
+	height:50px;
+	border: 1px solid #c7d0d4;
+	text-align: center;
+    border-radius: 5px;
+    margin: 5px 0;
+	transition: linear 0.2s;
+}
+
+#submit:hover{
+	background-color: #95a0a4;
+	transition: linear 0.2s;
 }

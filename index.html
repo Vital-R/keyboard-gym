@@ -16,39 +16,71 @@
 	</head>
 	<body>
 		<!-- Logo and Results -->
-		<div class="container">
+		<div class="container clr">
 			<div class="logo">
 				<i class="fas fa-keyboard"></i> Клавіатурний тренажер
 			</div>
 			
 			<div class="navigation">
-				<select title="Вибір мови/Language selection" id="select">
-					<option value="0" selected="true" disabled="disabled">Виберіть мову</option>
-					<option value="Українська">Українська</option>
-					<option value="English">English</option>
-					<option value="Русский">Русский</option>
-				</select>
-				<button value="Refresh Page" onClick="window.location.reload();" title="Refresh Page">
-					<img src="img/Refresh.svg" alt="Refresh Page" width="19px" height="19px">
-				</button>
+				<div class="block-select">
+					<select title="Вибір мови/Language selection" id="select">
+						<option value="0" selected="true" disabled="disabled">Вибір мови|Language selection</option>
+						<option disabled>Українська</option>
+						<option value="1_у">1 рівень</option>
+						<option value="2_у">2 рівень</option>
+						<option value="3_у">3 рівень</option>
+						<option value="4_у">4 рівень</option>
+						<option value="Українська">тренування</option>
+						<option value="-" disabled>-----------------------------</option>
+						<option disabled="disabled">English</option>
+						<option value="1_e">1 level</option>
+						<option value="2_e">2 level</option>
+						<option value="3_e">3 level</option>
+						<option value="4_e">4 level</option>
+						<option value="English">training</option>
+						<option value="-" disabled>-----------------------------</option>
+						<option disabled="disabled">Русский</option>
+						<option value="1_р">1 уровень</option>
+						<option value="2_р">2 уровень</option>
+						<option value="3_р">3 уровень</option>
+						<option value="4_р">4 уровень</option>
+						<option value="Русский">тренировка</option>
+						<option value="-" disabled>-----------------------------</option>
+						<option id="optionText" value="text">Вставити текст|Insert text</option>
+					</select>
+					<button value="Refresh Page" onClick="window.location.reload();" title="Refresh Page">
+						<img src="img/Refresh.svg" alt="Refresh Page" width="19px" height="19px">
+					</button>
+				</div>
+				<div class="block-theme">
+					<button class="darck-t theme">Darck theme</button>
+					<button class="light-t theme">Light theme</button>
+				</div>
 			</div>
 
 			<!-- Results -->
 			<div class="results">
-				<div class="results-title">Результати попередніх рядків:</div>
+				<div class="results-title  r_s_t-1">Результати попередніх рядків:</div>
+				<div class="results-title  r_s_t-2">The results of the previous rows:</div>
+				<div class="results-title  r_s_t-3">Результаты предыдущих строк:</div>
+				
 				<div class="indicators">
 					<div class="indicator">
 						<div class="indicator__icon">
 							<i class="fas fa-tachometer-alt"></i>
 						</div>
-						<div class="indicator__name">Символів у хвилину:</div>
+						<div class="indicator__name r_s_t-1">Символів у хвилину:</div>
+						<div class="indicator__name r_s_t-2">Symbols per minute:</div>
+						<div class="indicator__name r_s_t-3">Символов в минуту:</div>
 						<div class="indicator__value" id="symbolsPerMinute">0</div>
 					</div>
 					<div class="indicator">
 						<div class="indicator__icon">
 							<i class="far fa-clock"></i>
 						</div>
-						<div class="indicator__name">Слів у хвилину:</div>
+						<div class="indicator__name r_s_t-1">Слів у хвилину:</div>
+						<div class="indicator__name r_s_t-2">Words per minute:</div>
+						<div class="indicator__name r_s_t-3">Слов в минуту:</div>
 						<div class="indicator__value" id="wordsPerMinute">0</div>
 					</div>
 					
@@ -56,7 +88,9 @@
 						<div class="indicator__icon indicator__icon--errors">
 							<i class="fas fa-exclamation-circle"></i>
 						</div>
-						<div class="indicator__name">Помилок:</div>
+						<div class="indicator__name r_s_t-1">Помилок:</div>
+						<div class="indicator__name r_s_t-2">Errors:</div>
+						<div class="indicator__name r_s_t-3">Ошибок:</div>
 						<div class="indicator__value" id="errorPercent">0%</div>
 					</div>
 				</div>
@@ -65,13 +99,13 @@
 		</div>
 		<!-- // Logo and Results -->
 
-		<div class="container keyboard">
+		<div class="container keyboard key-hide">
 			<!-- Input field -->
 			<form action="">
 				<input
 					id="input"
 					type="text"
-					class="input unselectable"
+					class="input unselectable clr"
 					placeholder="Поле для введення тексту"
 					value=""
 					autocomplete="off"
@@ -176,6 +210,17 @@
 				</div>
 			</div>
 			<!-- // Keyboard -->
+
+			
+		</div>
+		<div class="container texterea text-hide">
+			<div>
+				<textarea name="text" id="text" cols="95" rows="15"  placeholder="Введіть текст|Insert text"></textarea>
+
+				<button type = "button" class="clr" id="submit" name = "button">
+					Продовжити
+				</button>
+			</div>
 		</div>
 
 		<script src="src/script.js"></script>
