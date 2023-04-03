@@ -157,9 +157,11 @@ const resultsTitle = document.querySelectorAll(".results-title");
 const r_s_t_1 = document.querySelectorAll(".r_s_t-1");
 const r_s_t_2 = document.querySelectorAll(".r_s_t-2");
 const r_s_t_3 = document.querySelectorAll(".r_s_t-3");
+const pHolder=document.querySelector("#input");
+
 
 r_s_t_1.forEach(element => {
-	element.style='display:block;';
+	element.style='display:inline-block;';
 });
 
 // Стилі для сітлої/темної теми сайту
@@ -203,7 +205,7 @@ select.addEventListener("change", function() {
 	}
 	function displayResultUA() {
 		r_s_t_1.forEach(element => {
-			element.style='display:block;';
+			element.style='display:inline-block;';
 		});
 		r_s_t_2.forEach(element => {
 			element.style='display:none;';
@@ -211,17 +213,19 @@ select.addEventListener("change", function() {
 		r_s_t_3.forEach(element => {
 			element.style='display:none;';
 		});
+		pHolder.placeholder="Поле для введення тексту";
 	}
 	function displayResultEN() {
 		r_s_t_1.forEach(element => {
 			element.style='display:none;';
 		});
 		r_s_t_2.forEach(element => {
-			element.style='display:block;';
+			element.style='display:inline-block;';
 		});
 		r_s_t_3.forEach(element => {
 			element.style='display:none;';
 		});
+		pHolder.placeholder="Text input field";
 	}
 	function displayResultRU() {
 		r_s_t_1.forEach(element => {
@@ -231,8 +235,9 @@ select.addEventListener("change", function() {
 			element.style='display:none;';
 		});
 		r_s_t_3.forEach(element => {
-			element.style='display:block;';
+			element.style='display:inline-block;';
 		});
+		pHolder.placeholder="Поле для ввода текста";
 	}
 
 	let party = createParty('');

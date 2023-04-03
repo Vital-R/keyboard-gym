@@ -156,12 +156,6 @@ option{
 .r_s_t-1, .r_s_t-2, .r_s_t-3{
 	display: none;
 }
-/* .blockShow{
-	display: block;
-}
-.blockHide{
-	display: none;
-} */
 
 .logo {
 	display: inline-block;
