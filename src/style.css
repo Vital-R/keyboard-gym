@@ -853,8 +853,6 @@ option{
 .strong {
 	font-weight: 700;
 }
-/*# sourceMappingURL=main.css.map */
-
 .pressed {
 	background-color: #c7d0d4 !important;
 }
@@ -883,4 +881,69 @@ option{
 #submit:hover{
 	background-color: #95a0a4;
 	transition: linear 0.2s;
+}
+
+.container_text_error{
+	position: fixed;
+	top: 0;
+   	left: 0;
+   	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	visibility: hidden;
+	z-index: -1;
+	opacity: 0;
+	transition: all .09s ease-out;
+}
+
+.container_text_error.block{
+	visibility: visible;
+	z-index: 100;
+	opacity: 1;
+}
+
+.container_text_error .block-shadow{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: #000;
+	opacity: 0.7;
+	z-index: 0;
+}
+
+.text_error{
+	font-family: "PT Mono", monospace;
+	
+	position: relative;
+	z-index: 2;
+	width: 570px;
+	border-radius: 10px;
+	box-shadow: 0 10px 15px rgb(0, 0, 0, .4);
+	background-color: #fff;
+	padding: 30px;
+
+	text-align: center;
+	
+}
+
+.text_error.darckT{
+	background: rgb(27, 40, 54);
+    color: rgb(136, 153, 166);
+}
+
+.btn-close{
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	border: none;
+	background: none;
+	opacity: 0.7;
+}
+
+.btn-close:hover{
+	opacity: 1;
 }

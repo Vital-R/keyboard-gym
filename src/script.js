@@ -179,6 +179,7 @@ document.querySelector('.darck-t').onclick = function() {
 
 	document.querySelector('#textExample').style='color:#8899a6';
 
+	document.querySelector(".text_error").classList.add("darckT");
 }
 document.querySelector('.light-t').onclick = function() {
 	darckT.style='display:block; border-bottom-color:#000;';
@@ -193,10 +194,12 @@ document.querySelector('.light-t').onclick = function() {
 	button.style='color:black';
 
 	document.querySelector('#textExample').style='color:#000';
+
+	document.querySelector(".text_error").classList.remove("darckT");
 }
 
 
-// Перевірка на вибрану мову
+// Перевірка на вибрану мову та рівень
 select.addEventListener("change", function() {
 
 	function textHide() {
@@ -307,29 +310,31 @@ select.addEventListener("change", function() {
 		textHide();
 		displayResultUA();
 	}
-
 	
 	if (element.value === "text"){
-
 		keyHide.style.display = "none";
 		textShow.classList.remove("text-hide");		
 
 		function click(){
 			if (texterea.value!='') {
 				party = createParty(texterea.value);
-
 				textHide();
-
 				viewUpdate();
+			}else{
+				document.querySelector(".container_text_error").classList.add("block");
 			}	
 		}
 		button.addEventListener('click', click, false);
-	}
 
+		document.querySelector(".btn-close").addEventListener('click', function(){
+			document.querySelector(".container_text_error").classList.remove("block");
+		}, false);
+	}
 	
 
-// Виклик функції, що викликає 2 метода при натисканні клавіші та віджманні
-let l = 0;
+// Виклик функції, що викликає 2 метода при натисканні клавіші та віджиманні
+// let l = 0;
+
 init();
 
 function init() {
