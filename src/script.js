@@ -110,40 +110,6 @@ Universe Universe Universe Universe Universe Universe Universe
 Ukraine is beautiful! Ukraine is beautiful! Ukraine is beautiful!
 Red Rue. Red Rue. Red Rue. Red Rue. Red Rue. Red Rue. Red Rue.`;
 
-const textRus =`Белеет парус одинокой
-В тумане моря голубом!..
-Что ищет он в стране далекой?
-Что кинул он в краю родном?..
-Играют волны - ветер свищет,
-И мачта гнется и скрипит...
-Увы! он счастия не ищет,
-И не от счастия бежит!
-Под ним струя светлей лазури,
-Над ним луч солнца золотой...
-А он, мятежный, просит бури,
-Как будто в бурях есть покой!`;
-
-const textRus_1 = `ао ао ао ао ао ао ао ао ао ао ао ао ао ао ао ао ао ао ао ао ао ао ао
-пр пр пр пр пр пр пр пр пр пр пр пр пр пр пр пр пр пр пр пр пр пр пр
-фи фи фи фи фи фи фи фи фи фи фи фи фи фи фи фи фи фи фи фи фи фи фи
-гс гс гс гс гс гс гс гс гс гс гс гс гс гс гс гс гс гс гс гс гс гс гс
-йъ йъ йъ йъ йъ йъ йъ йъ йъ йъ йъ йъ йъ йъ йъ йъ йъ йъ йъ йъ йъ йъ йъ`;
-
-const textRus_2 = `кмёт кмёт кмёт кмёт кмёт кмёт кмёт кмёт кмёт кмёт кмёт кмёт кмёт кмёт
-цушщ цушщ цущш цуушщ цушщ цушщ цушщ цушщ цушщ цушщ цушщ цушщ цушщ
-якюг якюг якюг якюг якюг якюг якюг якюг якюг якюг якюг якюг якюг якюг
-йщыж йщыж йщыж йщыж йщыж йщыж йщыж йщыж йщыж йщыж йщыж йщыж йщыж йщыж
-тзэб тзэб тзэб тзэб тзэб тзэб тзэб тзэб тзэб тзэб тзэб тзэб тзэб тзэб`;
-
-const textRus_3 = `УКЁЮ УКЁЮ УКЁЮ УКЁЮ УКЁЮ УКЁЮ УКЁЮ УКЁЮ УКЁЮ УКЁЮ УКЁЮ УКЁЮ УКЁЮ
-СыИх, СыИх, СыИх, СыИх, СыИх, СыИх, СыИх, СыИх, СыИх, СыИх, СыИх,
-РфсО. РфсО. РфсО. РфсО. РфсО. РфсО. РфсО. РфсО. РфсО. РфсО. РфсО.`;
-
-const textRus_4 =`свобода свобода свобода свобода свобода свобода свобода свобода
-Жолтый, Жолтый, Жолтый, Жолтый, Жолтый, Жолтый, Жолтый, Жолтый,
-Родной край! Родной край! Родной край! Родной край! Родной край!
-Море голубое? Море голубое? Море голубое? Море голубое? Море голубое?`;
-
 
 const keyHide = document.querySelector(".key-hide");
 const textShow = document.querySelector(".texterea");
@@ -230,18 +196,6 @@ select.addEventListener("change", function() {
 		});
 		pHolder.placeholder="Text input field";
 	}
-	function displayResultRU() {
-		r_s_t_1.forEach(element => {
-			element.style='display:none;';
-		});
-		r_s_t_2.forEach(element => {
-			element.style='display:none;';
-		});
-		r_s_t_3.forEach(element => {
-			element.style='display:inline-block;';
-		});
-		pHolder.placeholder="Поле для ввода текста";
-	}
 
 	let party = createParty('');
 	const element = document.querySelector('#select');
@@ -265,29 +219,11 @@ select.addEventListener("change", function() {
 		party = createParty(textEn_4);
 		textHide();
 		displayResultEN();
+	}if (element.value === "en") {
+		// textHide();
+		displayResultEN();
 	}
 
-	if (element.value === "Русский") {
-		party = createParty(textRus);
-		textHide();
-		displayResultRU();
-	} if (element.value === "1_р") {
-		party = createParty(textRus_1);
-		textHide();
-		displayResultRU();
-	} if (element.value === "2_р") {
-		party = createParty(textRus_2);
-		textHide();
-		displayResultRU();
-	} if (element.value === "3_р") {
-		party = createParty(textRus_3);
-		textHide();
-		displayResultRU();
-	} if (element.value === "4_р") {
-		party = createParty(textRus_4);
-		textHide();
-		displayResultRU();
-	}
 
 	if (element.value === "Українська"){
 		party = createParty(textUa);
@@ -308,6 +244,9 @@ select.addEventListener("change", function() {
 	} if (element.value === "4_у"){
 		party = createParty(textUa_4);
 		textHide();
+		displayResultUA();
+	}if (element.value === "ua") {
+		// textHide();
 		displayResultUA();
 	}
 	
@@ -372,7 +311,7 @@ function keydownHandler(event) {
 
 	console.warn("Не известный вид клавиши.", event);
 	if (letter) {
-		if (element.value === "Українська" || element.value === "Русский" || element.value === "1_у" || element.value === "2_у" || element.value === "3_у" || element.value === "4_у" || element.value === "1_р" || element.value === "2_р" || element.value === "3_р" || element.value === "4_р") {	
+		if (element.value === "Українська" || element.value === "1_у" || element.value === "2_у" || element.value === "3_у" || element.value === "4_у") {	
 			if(event.key === ',' || event.key === '.'){
 				letter.forEach(function(spec, i) {
 					if (i==1) {
